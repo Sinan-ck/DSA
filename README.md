@@ -36,3 +36,20 @@ sol = Solution()
 print(sol.maxProfit([7, 1, 5, 3, 6, 4]))  # 5
 print(sol.maxProfit([7, 6, 4, 3, 1]))      # 0
 ```
+
+## Solution
+
+```python
+class Solution(object):
+    def maxProfit(self, prices):
+        x = prices[0]
+        y = prices[0]
+        maxval = 0
+        for i in range(1, len(prices)):
+            y = prices[i]
+            if x > prices[i]:
+                x = prices[i]
+            val = y - x
+            maxval = max(maxval, val)
+        return maxval
+```
