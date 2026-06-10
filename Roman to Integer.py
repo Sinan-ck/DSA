@@ -10,8 +10,16 @@ class Solution:
             else:
                 x+=dic[s[i]]
         return x               
+ 
 
-Uses a dictionary to map Roman symbols to integers.
-Traverses the string from left to right.
-Detects subtractive cases (IV, IX, XL, XC, CD, CM).
-Adjusts the total by subtracting twice the previous value and adding the current value.
+Approach:
+- Store Roman numeral values in a hash table.
+- Traverse the string from left to right.
+- Handle subtractive notation (IV, IX, XL, XC, CD, CM) by adjusting the previous value when a larger numeral follows a smaller one.
+- Accumulate the final integer value during traversal.
+
+Time Complexity: O(n)
+- Each character is processed exactly once.
+
+Space Complexity: O(1)
+- Uses a fixed-size hash table containing only 7 Roman numeral mappings.he current value.
